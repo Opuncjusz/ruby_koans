@@ -14,6 +14,13 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a < 1 or b < 1 or c < 1
+    raise TriangleError, "Dlugosci bokow"
+  end
+  if a+b <= c or a+c <= b or b+c <= a
+    raise TriangleError, "Warunek trojkata"
+  end
+  
   if a == b and b == c
     return :equilateral
   elsif a == b or a == c or c == b
